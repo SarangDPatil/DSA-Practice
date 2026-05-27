@@ -33,11 +33,11 @@ public class Hashing {
 
        //Iteration - HashSet does not have an order
        set.add(0);
-    //    Iterator it = set.iterator();
-    //     while (it.hasNext()) {
-    //        System.out.print(it.next() + ", ");
-    //    }
-    //    System.out.println();
+       Iterator<Integer> it = set.iterator();
+       while (it.hasNext()) {
+           System.out.print(it.next() + ", ");
+       }
+       System.out.println();
 
        //isEmpty
        if(!set.isEmpty()) {
