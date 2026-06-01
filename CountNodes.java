@@ -1,13 +1,22 @@
 class CountNodes {
 
+    static class Node {
+
+        int data;
+        Node left;
+        Node right;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
     static int count(Node root) {
 
-        if(root == null)
+        if (root == null)
             return 0;
 
-        return 1 +
-               count(root.left) +
-               count(root.right);
+        return 1 + count(root.left) + count(root.right);
     }
 
     public static void main(String[] args) {
@@ -19,8 +28,6 @@ class CountNodes {
 
         root.left.left = new Node(40);
 
-        System.out.println(
-                count(root)
-        );
+        System.out.println(count(root));
     }
 }
