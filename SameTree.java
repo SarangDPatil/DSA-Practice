@@ -28,8 +28,7 @@ public class SameTree {
             return false;
         }
 
-        return isSameTree(p.left, q.left) &&
-               isSameTree(p.right, q.right);
+        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
     }
 
     public static void main(String[] args) {
