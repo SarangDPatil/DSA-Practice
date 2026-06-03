@@ -1,27 +1,38 @@
-class Node {
+class ListNode {
 
     int data;
-    Node next;
+    ListNode next;
 
-    Node(int data) {
+    ListNode(int data) {
         this.data = data;
+        this.next = null;
     }
 }
 
 public class DeleteFirst {
+
     public static void main(String[] args) {
 
-        Node head = new Node(10);
-        head.next = new Node(20);
-        head.next.next = new Node(30);
+        ListNode head = new ListNode(10);
+        head.next = new ListNode(20);
+        head.next.next = new ListNode(30);
 
-        head = head.next;
-
-        while (head != null) {
-
-            System.out.print(head.data + " -> ");
-
+        if (head != null) {
             head = head.next;
         }
+
+        ListNode current = head;
+
+        while (current != null) {
+            System.out.print(current.data);
+
+            if (current.next != null) {
+                System.out.print(" -> ");
+            }
+
+            current = current.next;
+        }
+
+        System.out.println();
     }
 }

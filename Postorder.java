@@ -1,14 +1,17 @@
-class Node {
-    int data;
-    Node left, right;
+class TreeNode {
 
-    Node(int data) {
+    int data;
+    TreeNode left, right;
+
+    TreeNode(int data) {
         this.data = data;
+        this.left = null;
+        this.right = null;
     }
 }
 
 public class Postorder {
-    static void postorder(Node root) {
+    static void postorder(TreeNode root) {
     if(root == null)
         return;
 
@@ -19,10 +22,10 @@ public class Postorder {
 
     public static void main(String[] args) {
 
-        Node root = new Node(10);
+        TreeNode root = new TreeNode(10);
 
-        root.left = new Node(20);
-        root.right = new Node(30);
+        root.left = new TreeNode(20);
+        root.right = new TreeNode(30);
 
         postorder(root);
     }

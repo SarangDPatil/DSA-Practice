@@ -10,17 +10,24 @@ class TreeNode {
     }
 }
 
-public class IdenticalTrees {
+public class SameTree {
 
-    static boolean identical(TreeNode t1, TreeNode t2) {
+    static boolean isSameTree(TreeNode p, TreeNode q) {
 
-        if (t1 == null && t2 == null)
+        if (p == null && q == null) {
             return true;
+        }
 
-        if (t1 == null || t2 == null)
+        if (p == null || q == null) {
             return false;
+        }
 
-        return t1.data == t2.data && identical(t1.left, t2.left) && identical(t1.right, t2.right);
+        if (p.data != q.data) {
+            return false;
+        }
+
+        return isSameTree(p.left, q.left) &&
+               isSameTree(p.right, q.right);
     }
 
     public static void main(String[] args) {
@@ -33,9 +40,10 @@ public class IdenticalTrees {
         root2.left = new TreeNode(2);
         root2.right = new TreeNode(3);
 
-        if (identical(root1, root2))
-            System.out.println("Trees are identical");
-        else
-            System.out.println("Trees are not identical");
+        if (isSameTree(root1, root2)) {
+            System.out.println("Both trees are identical");
+        } else {
+            System.out.println("Both trees are not identical");
+        }
     }
 }

@@ -1,23 +1,23 @@
-class Node {
+class ListNode {
     int data;
-    Node next;
+    ListNode next;
 
-    Node(int data) {
+    ListNode(int data) {
         this.data = data;
     }
 }
 
 public class ReverseLinkedList {
     public static void main(String[] args) {
-        Node head = new Node(10);
-        head.next = new Node(20);
-        head.next.next = new Node(30);
+        ListNode head = new ListNode(10);
+        head.next = new ListNode(20);
+        head.next.next = new ListNode(30);
         
-        Node prev = null;
-        Node current = head;
+        ListNode prev = null;
+        ListNode current = head;
         
         while (current != null) {
-            Node next = current.next;
+            ListNode next = current.next;
             current.next = prev;
             prev = current;
             current = next;

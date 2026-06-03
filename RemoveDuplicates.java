@@ -1,19 +1,19 @@
-class Node {
+class ListNode {
     int data;
-    Node next;
+    ListNode next;
 
-    Node(int data) {
+    ListNode(int data) {
         this.data = data;
     }
 }
 public class RemoveDuplicates {
     public static void main(String[] args) {
-        Node head = new Node(10);
-        head.next = new Node(20);
-        head.next.next = new Node(20);
-        head.next.next.next = new Node(30);
+        ListNode head = new ListNode(10);
+        head.next = new ListNode(20);
+        head.next.next = new ListNode(20);
+        head.next.next.next = new ListNode(30);
 
-        Node current = head;
+        ListNode current = head;
 
         while (current != null && current.next != null) {
             if (current.data == current.next.data) {

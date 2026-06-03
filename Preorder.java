@@ -1,15 +1,17 @@
-class Node {
+class TreeNode {
 
     int data;
-    Node left, right;
+    TreeNode left, right;
 
-    Node(int data) {
+    TreeNode(int data) {
         this.data = data;
+        this.left = null;
+        this.right = null;
     }
 }
 
 public class Preorder {
-    static void preorder(Node root) {
+    static void preorder(TreeNode root) {
     if(root == null)
         return;
 
@@ -20,10 +22,10 @@ public class Preorder {
 
     public static void main(String[] args) {
 
-        Node root = new Node(10);
+        TreeNode root = new TreeNode(10);
 
-        root.left = new Node(20);
-        root.right = new Node(30);
+        root.left = new TreeNode(20);
+        root.right = new TreeNode(30);
 
         preorder(root);
     }
